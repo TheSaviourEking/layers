@@ -19,7 +19,7 @@ export default function Navbar() {
                     <div>
                         <Image src={LogoImage} alt="Layer Logo" priority className="h-9 md:h-auto w-auto" />
                     </div>
-                    <div className="hidden lg:flex justify-center items-center bg-red-500">
+                    <div className="hidden lg:flex justify-center items-center">
                         <nav className="flex gap-6 font-medium">
                             {navLinks.map(link => (
                                 // <Link href={link.href} key={link.label}>{link.label}</Link>
