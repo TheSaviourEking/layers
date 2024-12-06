@@ -15,20 +15,17 @@ export default function CallToAction() {
     useEffect(() => {
         const currentAnimation = animate(scope.current, { x: '-50%' }, { duration: 30, ease: 'linear', repeat: Infinity });
 
-        (animation as { current: any }).current = currentAnimation;
+        (animation as { current: AnimationPlaybackControls }).current = currentAnimation;
+        currentAnimation.speed = 0.5;
 
         return () => {
             currentAnimation.stop();
         };
-    }, [animate])
+    }, [animate, scope])
 
     useEffect(() => {
         if (animation.current) {
-            if (isHovered) {
-                animation.current.speed = 0.5;
-            } else {
-                animation.current.speed = 1;
-            }
+            animation.current.speed = isHovered ? 0.5 : 1;
         }
     }, [isHovered]);
 
